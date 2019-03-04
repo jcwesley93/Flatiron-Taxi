@@ -1,20 +1,23 @@
 class Driver < ActiveRecord::Base
+  def accept_ride(ride)
+    ride.update(driver: self)
+    puts 'Accepted ride!'
+  end
 
-	def accept_ride(ride)
-		ride.update(driver: self)
-		puts "Accepted ride!"
-	end
+  def completed_rides
+    Ride.all.select { |ride| ride.driver == self }
+  end
 
-	def profits
-		Ride.all.select do |r|
-			r.driver == self
-		end.map {|r| r.fare}.inject(:+)
-	end
+  def rides_with_ratings
+    completed_rides.reject { |ride| ride.rating.nil? }
+  end
 
-	def average_rating 
-	total =	Ride.all.select do |r|
-			r.driver == self && r.rating != nil
-		end.map {|r| r.rating} 
-		total.inject(:+) / total.length
-	end
+  def profits
+    completed_rides.map(&:fare).inject(:+)
+  end
+
+  def average_rating 
+    total =	rides_with_ratings.map(&:rating)
+    total.inject(:+) / total.length
+  end
 end
