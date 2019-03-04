@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_162540) do
+ActiveRecord::Schema.define(version: 2019_03_04_193139) do
+
+  create_table "drivers", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_num"
+    t.string "license"
+  end
 
   create_table "passengers", force: :cascade do |t|
     t.string "name"
@@ -23,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_162540) do
     t.string "pickup_loc"
     t.string "dropoff_loc"
     t.integer "fare"
+    t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

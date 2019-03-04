@@ -6,6 +6,7 @@ class Rides < ActiveRecord::Migration[5.2]
   		t.string :pickup_loc
   		t.string :dropoff_loc
   		t.integer :fare
+  		t.float :rating
   		t.timestamps
   	end
   end
