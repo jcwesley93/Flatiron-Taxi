@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_162540) do
 
   create_table "passengers", force: :cascade do |t|
     t.string "name"
+    t.string "phone_num"
   end
 
   create_table "rides", force: :cascade do |t|
@@ -22,6 +23,8 @@ ActiveRecord::Schema.define(version: 2019_03_04_162540) do
     t.string "pickup_loc"
     t.string "dropoff_loc"
     t.integer "fare"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
