@@ -16,7 +16,7 @@ class Driver < ActiveRecord::Base
     completed_rides.map(&:fare).inject(:+)
   end
 
-  def average_rating 
+  def average_rating
     total =	rides_with_ratings.map(&:rating)
     total.inject(:+) / total.length
   end
