@@ -1,5 +1,3 @@
-# flatiron-taxi
-
 # WELCOME TO FLATIRON TAXI! 
 
 
@@ -27,7 +25,7 @@ Flatiron Taxi can be installed using the following steps:
 
 We welcome contributions to the Flatiron Taxi application. If you would like to contribute to this project, please complete the following steps: 
 
-	1. Fork it (https:..github.com/jcwesley93/flatiron-taxi/fork)
+	1. Fork it (https://github.com/jcwesley93/flatiron-taxi/fork)
 	2. Create your feature branch (git checkout -b feature/your_branch_name)
 	3. Commit your changes (git commit -am 'Your commit message')
 	4. Push to your feature branch ( git push origin feature/your_branch_name)
@@ -37,7 +35,7 @@ We welcome contributions to the Flatiron Taxi application. If you would like to 
 
 # LICENSE 
 
-This project was created by Jaela Wesley(jaela.wesley@flatironschool.com) and Fredi Ramirez(fredi.ramirez@flatironschool.com). Please feel free to reach out with any questions or comments. 
+This project was created by Jaela Wesley (jaela.wesley@flatironschool.com) and Fredi Ramirez (fredi.ramirez@flatironschool.com). Please feel free to reach out with any questions or comments. 
 
 MIT License
 
