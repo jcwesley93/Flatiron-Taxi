@@ -1,5 +1,7 @@
 require_relative './config/environment'
 
+
+
 def general_main_menu
 	puts "Are you a passenger (P) or driver (D)?"
 	answer = gets.chomp
@@ -12,6 +14,21 @@ end
 
 
 def driver_start
+	puts <<-logo
+
+		 ________  ______        ________                    __ 
+		|        \|      \      |        \                  |  \
+		| $$$$$$$$ \$$$$$$       \$$$$$$$$______   __    __  \$$
+		| $$__      | $$           | $$  |      \ |  \  /  \|  \
+		| $$  \     | $$           | $$   \$$$$$$\ \$$\/  $$| $$
+		| $$$$$     | $$           | $$  /      $$  >$$  $$ | $$
+		| $$       _| $$_          | $$ |  $$$$$$$ /  $$$$\ | $$
+		| $$      |   $$ \         | $$  \$$    $$|  $$ \$$\| $$
+		 \$$       \$$$$$$          \$$   \$$$$$$$ \$$   \$$ \$$
+		                                                        
+		                                                                                                               
+		logo
+		
 	puts "Welcome to Flatiron Taxi! Please enter your phone number."
 
 	num = gets.chomp
