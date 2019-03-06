@@ -7,9 +7,8 @@
 # INTRODUCTION 
 
 Flatiron Taxi is a rideshare platform that not only connects riders with available drivers, but offers additional features for both the rider and the driver. 
-
 Flatiron Taxi utilizes Ruby, ActiveRecord and TTYPrompt for increased usability.
-------------
+
 
 # INSTALL INSTRUCTIONS
 
