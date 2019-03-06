@@ -15,3 +15,9 @@ ActiveRecord::Base.establish_connection(
 require_relative '../app/models/passenger.rb'
 require_relative '../app/models/ride.rb'
 require_relative '../app/models/driver.rb'
+
+require_relative '../app/views/prompt_util.rb'
+require_relative '../app/views/main_menu_view.rb'
+require_relative '../app/views/driver_view.rb'
+require_relative '../app/views/passenger_view.rb'
+

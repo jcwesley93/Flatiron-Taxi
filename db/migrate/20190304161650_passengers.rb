@@ -1,8 +1,8 @@
 class Passengers < ActiveRecord::Migration[5.2]
-  def change 
-  	create_table :passengers do |t|
-  		t.string :name 
-  		t.string :phone_num
-  	end
+  def change
+    create_table :passengers do |t|
+      t.string :name
+      t.string :phone_num
+    end
   end
 end
