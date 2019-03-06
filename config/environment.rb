@@ -21,4 +21,3 @@ require_relative '../app/views/prompt_util.rb'
 require_relative '../app/views/main_menu_view.rb'
 require_relative '../app/views/driver_view.rb'
 require_relative '../app/views/passenger_view.rb'
-
