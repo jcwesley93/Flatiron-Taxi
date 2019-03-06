@@ -1,10 +1,13 @@
 module MainMenuView
+  @@prompt = TTY::Prompt.new
+
   def self.general_main_menu
-    answer = PromptUtil.prompt('Are you a passenger (P) or a driver (D)?')
-    if answer == 'P'
-      PassengerView.passenger_start
-    elsif answer == 'D'
-      DriverView.driver_start
+
+    answer = @@prompt.select('Are you a passenger or a driver?', %w[Passenger Driver])
+    if answer == 'Passenger'
+      PassengerView.passenger_start(@@prompt)
+    elsif answer == 'Driver'
+      DriverView.driver_start(@@prompt)
     else
       general_main_menu
     end

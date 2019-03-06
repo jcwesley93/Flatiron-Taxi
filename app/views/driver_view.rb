@@ -1,7 +1,8 @@
 module DriverView
-  def self.driver_start
-    num = PromptUtil.prompt('Welcome to Flatiron Taxi! Please enter your phone number.')
-  
+  def self.driver_start(prompt)
+    @@prompt = prompt
+    num = @@prompt.ask('What is your phone number?')
+
     d = Driver.find_or_create_by(phone_num: num)
     if d.name.nil?
       puts 'Please enter your name'
@@ -22,23 +23,31 @@ module DriverView
       puts "Drop-off Location: #{r.dropoff_loc}"
       puts "Fare: #{r.fare}"
       puts '--------------------------'
-      answer = PromptUtil.prompt('Would you like to accept this ride? (y/n)')
-      if answer == 'y'
+      answer = @@prompt.yes?("Do you want to accept this ride?") do |q|
+        q.default false
+        q.positive 'Yup'
+        q.negative 'Nope'
+      end
+      if answer == 'Yup'
         r.rating = rand(1..5)
         driver.accept_ride(r)
-        break;
+        main_menu_driver(driver);
       end
     end
   end
 
   def self.main_menu_driver(d)
-    answer = PromptUtil.prompt('Would you like to view nearby rides (RIDE), view your profits ($), or view your rating (RATE)?').downcase
-    if answer == 'ride'
+    ans = @@prompt.select('What would you like to do?') do |menu|
+      menu.choice 'View Nearby Rides', 1
+      menu.choice 'View Your Profits', 2
+      menu.choice 'View Your Rating', 3
+    end
+    if ans == 1
       show_pending_rides(d)
-    elsif answer == '$'
+    elsif ans == 2
       puts "Your profits are #{d.profits}"
       main_menu_driver(d)
-    elsif answer == 'rate'
+    elsif ans ==  3
       puts "Your average rating is #{d.average_rating}"
       main_menu_driver(d)
     else
