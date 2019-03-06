@@ -11,11 +11,13 @@ module PassengerView
   end
 
   def self.main_menu_passenger(p)
-    ans = PromptUtil.prompt('Would you like to request a ride (REQ) or view your most recent rides (REC)?').downcase 
+    ans = PromptUtil.prompt('Would you like to request a ride (REQ), view your most recent rides (REC), or add a payment method (PAY)?').downcase 
     if ans == 'req'
       run_request_prompt(p)
     elsif ans == 'rec'
       run_view_recents(p)
+    elsif ans == 'pay'
+      run_view_payment(p)
     else
       main_menu_passenger(p)
     end
@@ -51,4 +53,45 @@ module PassengerView
     end
     main_menu_passenger(p)
   end
+
+
+  def self.run_view_payment(p)
+    ans =  PromptUtil.prompt("Would you like to view all your payment methods (VIEW), add a card (ADD), or delete a card (DELETE)?").downcase
+
+
+    if ans == "view"
+      if p.view_wallets.empty? 
+          puts "You have no linked cards"
+        else 
+          p.view_wallets.each do |w|
+        puts "Card Number: #{w.card_number[w.card_number.length - 4, w.card_number.length]}"
+        puts "Exp. Date: #{w.exp_date}"
+        puts "Cardholder: #{w.cardholder_name}"
+        puts '--------------------------'
+        end
+        end
+      main_menu_passenger(p)
+    elsif ans == "add"
+      card_number = PromptUtil.prompt("Enter a card number")
+      exp_date = PromptUtil.prompt("Enter the card expiration number")
+      zip_code = PromptUtil.prompt("Enter your zip code")
+      cvv = PromptUtil.prompt("Enter the CVV (Numbers on the back)")
+      cardholder_name = PromptUtil.prompt("Enter the cardholder's name")
+      p.add_payment_method(card_number, exp_date, zip_code, cvv, cardholder_name)
+      puts "Card Added!"
+      main_menu_passenger(p)
+    elsif  ans == "delete"
+      card = PromptUtil.prompt("Please enter the last four digits of the card that you would like to delete")
+      p.delete_payment_method(card)
+      puts "Card has been deleted!"
+      main_menu_passenger(p)
+    else
+      main_menu_passenger(p)
+        
+    end
+  end
+
+
+
+
 end

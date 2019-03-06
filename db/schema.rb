@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_193139) do
+ActiveRecord::Schema.define(version: 2019_03_06_153744) do
 
   create_table "drivers", force: :cascade do |t|
     t.string "name"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 2019_03_04_193139) do
     t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "wallets", force: :cascade do |t|
+    t.string "card_number"
+    t.string "exp_date"
+    t.integer "zip_code"
+    t.integer "cvv"
+    t.string "cardholder_name"
+    t.integer "passenger_id"
   end
 
 end
