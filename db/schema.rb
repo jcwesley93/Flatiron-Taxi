@@ -12,26 +12,26 @@
 
 ActiveRecord::Schema.define(version: 2019_03_04_193139) do
 
-  create_table 'drivers', force: :cascade do |t|
-    t.string 'name'
-    t.string 'phone_num'
-    t.string 'license'
+  create_table "drivers", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_num"
+    t.string "license"
   end
 
-  create_table 'passengers', force: :cascade do |t|
-    t.string 'name'
-    t.string 'phone_num'
+  create_table "passengers", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_num"
   end
 
-  create_table 'rides', force: :cascade do |t|
-    t.integer 'passenger_id'
-    t.integer 'driver_id'
-    t.string 'pickup_loc'
-    t.string 'dropoff_loc'
-    t.integer 'fare'
-    t.float 'rating'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "rides", force: :cascade do |t|
+    t.integer "passenger_id"
+    t.integer "driver_id"
+    t.string "pickup_loc"
+    t.string "dropoff_loc"
+    t.integer "fare"
+    t.float "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
