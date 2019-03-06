@@ -6,14 +6,14 @@
 
 # INTRODUCTION 
 
-# Flatiron Taxi is a rideshare platform that not only connects riders with available drivers, but offers additional features for both the rider and the driver. 
+Flatiron Taxi is a rideshare platform that not only connects riders with available drivers, but offers additional features for both the rider and the driver. 
 
-# Flatiron Taxi utilizes Ruby, ActiveRecord and TTYPrompt for increased usability.
------
+Flatiron Taxi utilizes Ruby, ActiveRecord and TTYPrompt for increased usability.
+------------
 
 # INSTALL INSTRUCTIONS
 
-# Flatiron Taxi can be installed using the following steps: 
+Flatiron Taxi can be installed using the following steps: 
 
 	- Clone or download the Flatiron Taxi Repository: https://github.com/jcwesley93/flatiron-taxi
 
@@ -26,7 +26,7 @@
 
 # CONTRIBUTING 
 
-# We welcome contributions to the Flatiron Taxi application. If you would like to contribute to this project, please complete the following steps: 
+We welcome contributions to the Flatiron Taxi application. If you would like to contribute to this project, please complete the following steps: 
 
 	1. Fork it (https:..github.com/jcwesley93/flatiron-taxi/fork)
 	2. Create your feature branch (git checkout -b feature/your_branch_name)
@@ -38,7 +38,8 @@
 
 # LICENSE 
 
-# This project was created by Jaela Wesley(jaela.wesley@flatironschool.com) and Fredi Ramirez(fredi.ramirez@flatironschool.com). Please feel free to reach out with any questions or comments. 
+This project was created by Jaela Wesley(jaela.wesley@flatironschool.com) and Fredi Ramirez(fredi.ramirez@flatironschool.com). Please feel free to reach out with any questions or comments. 
+
 MIT License
 
 Copyright (c) 2019 Jaela Wesley, Fredi Ramirez
