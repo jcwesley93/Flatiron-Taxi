@@ -1,11 +1,11 @@
 # Driver Model
 class Driver < ActiveRecord::Base
   def accept_ride(ride)
-    ride.update(driver_id: self.id)
+    ride.update(driver_id: id)
   end
 
   def completed_rides
-    Ride.all.select { |ride| ride.driver == self }
+    Ride.where(driver_id: id)
   end
 
   def profits

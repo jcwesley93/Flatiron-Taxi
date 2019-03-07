@@ -41,7 +41,7 @@ module PassengerView
     puts "You gave your driver #{rating} stars."
     main_menu_passenger(p, prompt)
   end
-  
+
   def self.run_view_recents(p, prompt)
     if p.recent_rides.empty?
       puts 'You haven\'t taken any rides.'
@@ -67,10 +67,10 @@ module PassengerView
       menu.choice 'Go back', 4
     end
     if ans == 1
-      if p.view_wallets.empty? 
+      if p.wallets.empty? 
         puts 'You have no linked cards'
       else 
-        p.view_wallets.each do |w|
+        p.wallets.each do |w|
           puts "Card Number: #{w.card_number[w.card_number.length - 4, w.card_number.length]}"
           puts "Exp. Date: #{w.exp_date}"
           puts "Cardholder: #{w.cardholder_name}"
