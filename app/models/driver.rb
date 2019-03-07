@@ -1,7 +1,7 @@
 # Driver Model
 class Driver < ActiveRecord::Base
   def accept_ride(ride)
-    ride.update(driver: self)
+    ride.update(driver_id: self.id)
   end
 
   def completed_rides
