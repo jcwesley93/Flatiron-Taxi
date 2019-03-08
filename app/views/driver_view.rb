@@ -33,7 +33,6 @@ module DriverView
       end
       puts "Answer: #{answer}"
       if answer
-        r.update(rating: rand(1..5))
         driver.accept_ride(r)
         main_menu_driver(driver, prompt)
       end
