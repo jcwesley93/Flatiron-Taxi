@@ -1,5 +1,7 @@
 # Driver Model
 class Driver < ActiveRecord::Base
+  has_many :rides
+  has_many :passengers, through: :rides
   def accept_ride(ride)
     ride.update(driver_id: id)
   end

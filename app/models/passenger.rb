@@ -1,4 +1,8 @@
 class Passenger < ActiveRecord::Base
+  has_many :rides
+  has_many :wallets
+  has_many :drivers, through: :rides
+
   def request_ride(pick_up, drop_off, fare)
     Ride.create(passenger: self,
                 pickup_loc: pick_up,
